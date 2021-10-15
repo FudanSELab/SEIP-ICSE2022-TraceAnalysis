@@ -1,0 +1,95 @@
+version: "3"
+services:
+  cc-ui-service:
+    build: cc-ui-service
+    image: httdty2/cc-ui-service
+    container_name: cc-ui-service
+    restart: always
+    ports:
+      - 8080:8080
+    networks:
+      - my-network
+
+  cc-admin-meeting-service:
+    build: cc-admin-meeting-service
+    image: httdty2/cc-admin-meeting-service
+    container_name: cc-admin-meeting-service
+    restart: always
+    ports:
+      - 8082:8082
+    networks:
+      - my-network
+
+  cc-author-article-service:
+    build: cc-author-article-service
+    image: httdty2/cc-author-article-service
+    container_name: cc-author-article-service
+    restart: always
+    ports:
+      - 8081:8081
+    networks:
+      - my-network
+
+  cc-chair-service:
+    build: cc-chair-service
+    image: httdty2/cc-chair-service
+    container_name: cc-chair-service
+    restart: always
+    ports:
+      - 8084:8084
+    networks:
+      - my-network
+
+  cc-eureka-service:
+    build: cc-eureka-service
+    image: httdty2/cc-eureka-service
+    container_name: cc-eureka-service
+    restart: always
+    ports:
+      - 9091:9091
+    networks:
+      - my-network
+
+  cc-gateway-service:
+    build: cc-gateway-service
+    image: httdty2/cc-gateway-service
+    container_name: cc-gateway-service
+    restart: always
+    ports:
+      - 9999:9999
+    networks:
+      - my-network
+
+  cc-pcmember-service:
+    build: cc-pcmember-service
+    image: httdty2/cc-pcmember-service
+    container_name: cc-pcmember-service
+    restart: always
+    ports:
+      - 8083:8083
+    networks:
+      - my-network
+
+  cc-user-auth-service:
+    build: cc-user-auth-service
+    image: httdty2/cc-user-auth-service
+    container_name: cc-user-auth-service
+    restart: always
+    ports:
+      - 8085:8085
+    networks:
+      - my-network
+
+  cc-notice-service:
+    build: cc-notice-service
+    image: httdty2/cc-notice-service
+    container_name: cc-notice-service
+    restart: always
+    ports:
+      - 8086:8086
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge

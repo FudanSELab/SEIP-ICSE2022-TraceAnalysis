@@ -1,0 +1,62 @@
+GET http://localhost:12803/article/findById?id=1
+Accept: application/json
+
+###
+POST http://localhost:12306/meeting/reviewer
+Content-Type: application/json
+Authorization: "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3dXhpeWEiLCJpYXQiOjE2Mjk4NTgyMzgsImV4cCI6MTYyOTg2MDAzOH0.RkDalDxp4-LOTVWCUQ7EdvGLm_65AMP0vNfDZNkdu9Jc9F_xk30j-k5LxvYa7mRB4cQLTIG1M-CRLUp2TpVPJg"
+
+{
+  "articleid": "1",
+  "confidence": "very low",
+  "pcMemberName": "test1",
+  "reviews": "sa",
+  "score": -2
+}
+
+###
+GET http://localhost:12803/user/authorMeeting?username=test2
+Accept: application/json
+Authorization: "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MiIsImlhdCI6MTYyOTc5MTk3MiwiZXhwIjoxNjI5NzkzNzcyfQ.DNGyxufhXrAlIjAcB8hAqGdyAq-ntxsC4d_j85ZzTUsHe9KKZcZHKY9h__cOeTJ_lZAXeZjtmwoBv8TCpORGRQ"
+
+###
+
+POST http://localhost:12803/meeting/reviewPost
+Content-Type: application/json
+Authorization: "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0MSIsImlhdCI6MTYyOTcyMjU4NCwiZXhwIjoxNjI5NzI0Mzg0fQ.FdO6kFmyDt3En92vubO7ceowUEv0eBPFLNrEAjxFSbc_G7LwTRPEuaBVBrQIkh_eZsjaZsjSA_5Z-pjjRgM85w"
+
+{
+  "articleId": "1",
+  "targetId": 3,
+  "content": "aaaa",
+  "posterName": "test1",
+  "status": "beforeRebuttal"
+}
+
+###
+GET http://localhost:12803/user/articleDetail?articleId=1
+Accept: application/json
+Authorization: "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3dXhpeWEiLCJpYXQiOjE2Mjk3MDg1OTAsImV4cCI6MTYyOTcxMDM5MH0.dH_MapiK0-Cg3fuiYRpEF9mxrVZquJWgbE5dWJiIV4d8SaQubdAiPK7eChhXgyVVBhAmY9wIG-EpcJZxdkfTMQ"
+
+###
+POST http://localhost:12306/meeting/beginReview
+Content-Type: application/json
+Authorization: "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ3dXhpeWEiLCJpYXQiOjE2Mjk3OTUyNDksImV4cCI6MTYyOTc5NzA0OX0.iB2cdk6G4IwhRmTICuRotWo3iLHMw__F90aeSqYfRQ25lwK0p2363LTnUKbPeW3PbbwpeerDFdP3bGlt9Ku2ZQ"
+
+{
+  "meetingName": "testMeeting",
+  "assignStrategy": "TopicRelevant"
+}
+
+###
+POST http://localhost:12401/login
+Content-Type: application/json
+
+{
+  "username": "wuxiya",
+  "password": "Pwuxiya"
+}
+
+###
+
+
